@@ -1,5 +1,5 @@
 ## Capstone project of udacity frontend nano
-### Travel app
+### Travel Assistant
 
 
 
