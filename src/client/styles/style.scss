@@ -3,7 +3,7 @@
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "nav nav nav" "about about about" "trip trip trip" "tripdetails tripdetails tripdetails" "tripdetails tripdetails tripdetails" "footer footer footer";
-    font-family: Comfortaa, cursive;
+    font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
 
@@ -13,38 +13,39 @@
     width: 100%;
     height: 100vh;
     grid-area: about;
-    background-image: url("../views/img/background.jpg");
+    background-image: url("../views/img/travel.jpg");
     display: grid;
-    grid-template-columns: 20vw 1fr 20vw;
+    grid-template-columns: 10vw 1fr 10vw;
     grid-template-areas: "space space space" "content content content" "space3 space3 space3";
 }
 
 #desc {
     margin: 0 auto;
-    background-color: #20bf55;
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
-    width: 80%;
+    background-color: #d8e4bc;
+    /*background-image: linear-gradient(315deg, #d8e4bc 0%, #f0e68c 50%);*/
+    width: 50%;
     grid-area: content;
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 20px;
-    box-shadow: 10px 16px 55px black;
+    border-radius: 3px;
+    border: 2px;
+    border-color: white;
+    box-shadow: 10px 10px 10px lightgrey;
 }
 
 #desc div {
-    font-size: 10vh;
+    font-size: 30px;
 }
 
 #desc button {
-    font-size: 4vh;
-    padding: 15px 20px;
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border: none;
-    border-radius: 10px;
-    box-shadow: 10px 16px 10px black;
-    font-family: Comfortaa, cursive;
+    font-size: 20px;
+    padding: 15px 10px;
+    border: 2px;
+    border-radius: 3px;
+    /*box-shadow: 10px 16px 10px lightgrey;*/
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #desc button:hover{
@@ -57,24 +58,24 @@
 
 
 #plan_trip {
-    padding: 5vh 0;
+    padding: 20px 0;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     grid-area: trip;
-    background-color: #20bf55;
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background-color: #d8e4bc;
+    /*background-image: linear-gradient(315deg, #d8e4bc 0%, #f0e68c 74%);*/
     display: flex;
     flex-flow: row nowrap;
 }
 
 #form_img img {
-    width: 30vw;
-    height: 30vw;
+    width: 20pc;
+    height: 20pc;
 }
 
 #plan_your_trip {
     margin: 0 auto;
-    width: 80vw;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -82,15 +83,15 @@
 }
 
 #plan_your_trip h1{
-    font-size: 5vh;
+    font-size: 25px;
 }
 
 #trip_details_form input{
-    font-size: 3vh;
+    font-size: 15px;
     padding: 5px;
     border:none;
-    font-family: Comfortaa,cursive;
-    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 3px;
     box-shadow: 0 1px 10px white;
 }
 
@@ -129,8 +130,8 @@
 }
 
 #dest_photo img{
-    width: 15vw;
-    height: 15vw;
+    width: 5vw;
+    height: 5vw;
 }
 
 #trip_details{
@@ -139,11 +140,11 @@
     flex-flow: row;
     align-items: center;
     grid-area: content;
-    background-color: #20bf55;
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background-color: #d8e4bc;
+    /*background-image: linear-gradient(315deg, #d8e4bc 0%, #f0e68c 74%);*/
     width: 80vw;
     height: auto;
-    border-radius: 20px;
+    border-radius: 3px;
     box-shadow: 12px 16px 55px black;
 }
 
@@ -162,25 +163,24 @@
 }
 
 .dynamic_content{
-    background-image: linear-gradient(315deg, #f5df2e 0%, #f07654 74%);
+    background-color: transparent;
 }
 
 #remove_trip{
     font-size: 2vw;
     width: fit-content;
     outline: none;
-    font-family: Comfortaa,cursive;
-    padding: 1vw 2vw;
-    background-color: red;
-    border:none;
-    border-radius: 50px;
-    box-shadow: 1px 6px 10px black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 5px;
+    background-color: #fdee00;
+    border:5px;
+    border-radius: 5px;
 }
 #remove_trip:hover{
     box-shadow: none;
 }
 #dest_desc_photo{
-    border-radius: 50%;
+    border-radius: 80%;
 }
 
 .invisible{

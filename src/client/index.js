@@ -8,7 +8,7 @@ import './styles/footer.scss'
 import './styles/header.scss'
 import './styles/style.scss'
 
-import './views/img/travel-svgrepo-com.svg'
+import './views/img/travel-logo.png'
 import './views/img/travel.jpg'
 
 export {

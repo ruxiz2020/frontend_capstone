@@ -2,12 +2,15 @@ const details = {};
 
 // All the resources of APIs
 const geoNamesURL = 'http://api.geonames.org/searchJSON?q=';
-const username = 'ruxiz2020';
+//const username = 'ruxiz2020';
+const username = 'saumyapandeyy';
 const weatherbitforecastURL = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
 const weatherbithistoryURL = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
-const weatherbitkey = 'd3312ce43bf04b32ae663b6dda486b03';
+//const weatherbitkey = 'd3312ce43bf04b32ae663b6dda486b03';
+const weatherbitkey = 'a0b6e906ce164165b3dffd63e9425495';
 const pixabayURL = 'https://pixabay.com/api/?key=';
-const pixabayAPI = '18908213-9144f546c4d92c6d7fb7c781a';
+//const pixabayAPI = '18908213-9144f546c4d92c6d7fb7c781a';
+const pixabayAPI = '16471602-8e4cf128d083ab992b7ab8332';
 
 const trip_details_section = document.getElementById('trip_details_section');
 const plan_trip = document.getElementById('plan_trip');
@@ -97,7 +100,7 @@ async function getImage(toCity) {
 }
 
 async function postData(details) {
-  const response = await fetch('http://localhost:8888/postData', {
+  const response = await fetch('http://localhost:8082/postData', {
     method: "POST",
     credentials: 'same-origin',
     headers: {
