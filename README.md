@@ -27,3 +27,8 @@ or start prod server
 ```shell script
 npm run build-prod
 ```
+
+run test
+```shell script
+npm run test
+```

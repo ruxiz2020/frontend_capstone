@@ -1,3 +1,6 @@
+//const dotenv = require('dotenv');
+//dotenv.config();
+
 const details = {};
 
 // All the resources of APIs
