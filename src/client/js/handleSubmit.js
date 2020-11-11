@@ -1,6 +1,17 @@
-
+//const dotenv = require('dotenv');
+//dotenv.config();
 
 const details = {};
+
+// All the resources of APIs
+const geoNamesURL = 'http://api.geonames.org/searchJSON?q=';
+//const username = 'ruxiz2020';
+const username = 'saumyapandeyy';
+const weatherbitforecastURL = 'https://api.weatherbit.io/v2.0/forecast/daily?lat=';
+const weatherbithistoryURL = 'https://api.weatherbit.io/v2.0/history/daily?lat=';
+const weatherbitkey = 'd3312ce43bf04b32ae663b6dda486b03';
+const pixabayURL = 'https://pixabay.com/api/?key=';
+const pixabayAPI = '18908213-9144f546c4d92c6d7fb7c781a';
 
 const trip_details_section = document.getElementById('trip_details_section');
 const plan_trip = document.getElementById('plan_trip');
@@ -45,7 +56,49 @@ function handleSubmit(e) {
   }
 }
 
+// Function to get Geo stats
+async function getGeoDetails(to) {
+  const response = await fetch(geoNamesURL + to + '&maxRows=10&username=' + username);
+  try {
+    return await response.json();
+  } catch (e) {
+    console.log('error', e);
+  }
+}
 
+//Function to get weather data
+async function getWeatherData(toLat, toLng, date) {
+
+  // Getting the timestamp for the current date and traveling date for upcoming processing.
+  const timestamp_trip_date = Math.floor(new Date(date).getTime() / 1000);
+  const todayDate = new Date();
+  const timestamp_today = Math.floor(new Date(todayDate.getFullYear() + '-' + todayDate.getMonth() + '-' + todayDate.getDate()).getTime() / 1000);
+
+  let response;
+  // Check if the date is gone and call the appropriate endpoint.
+  if (timestamp_trip_date < timestamp_today) {
+    let next_date = new Date(date);
+    next_date.setDate(next_date.getDate() + 1);
+    response = await fetch(weatherbithistoryURL + toLat + '&lon=' + toLng + '&start_date=' + date + '&end_date=' + next_date + '&key=' + weatherbitkey)
+  } else {
+    response = await fetch(weatherbitforecastURL + toLat + '&lon=' + toLng + '&key=' + weatherbitkey);
+  }
+
+  try {
+    return await response.json();
+  } catch (e) {
+    console.log('error', e)
+  }
+}
+
+async function getImage(toCity) {
+  const response = await fetch(pixabayURL + pixabayAPI + '&q=' + toCity + ' city&image_type=photo');
+  try {
+    return await response.json();
+  } catch (e) {
+    console.log('error', e);
+  }
+}
 
 async function postData(details) {
   const response = await fetch('http://localhost:8082/postData', {

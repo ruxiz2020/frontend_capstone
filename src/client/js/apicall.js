@@ -13,7 +13,7 @@ export async function apiCalls(bigData) {
   // Calls the Geonames API, checks result for failure to connect
   // or user input city not returning any matches
   // Assigns result to cityData key in bigData object
-  const geonamesData = await callServer('callgeo', bigData)
+  const geonamesData = await callServer('getgeo', bigData)
   if (geonamesData == null) {
     errorMessage.innerHTML = serverError
     return null
@@ -26,7 +26,7 @@ export async function apiCalls(bigData) {
 
   // Calls the Weatherbit API, checks result for failure to connect
   // Assigns result to forecastData key in bigData object
-  const weatherbitData = await callServer('callweather', bigData)
+  const weatherbitData = await callServer('getweather', bigData)
   if (weatherbitData == null) {
     errorMessage.innerHTML = serverError
     return null
@@ -36,7 +36,7 @@ export async function apiCalls(bigData) {
 
   // Calls the Pixabay API, checks result for failure to connect
   // Assigns result URL to photo key in bigData object
-  const photoData = await callServer('callphoto', bigData)
+  const photoData = await callServer('getimage', bigData)
   if (photoData == null) {
     errorMessage.innerHTML = serverError
     return null
