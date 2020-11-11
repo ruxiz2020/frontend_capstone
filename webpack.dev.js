@@ -8,6 +8,7 @@ module.exports = {
   entry: './src/client/index.js',
   devtool: 'source-map',
   stats: 'verbose',
+  target: 'node',
   output: {
     libraryTarget: 'var',
     library: 'Client'
