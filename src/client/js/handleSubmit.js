@@ -16,25 +16,14 @@ async function handleSubmit(event) {
 
   //const data = postData(tripData);
   const tripResult = await postData(tripData).then((res) => {
-        //document.getElementById('loading').classList.add('hide');
+        
         console.log(res);
-        //displayNewSearch(res);
+
         return res;
   });
   console.log(tripResult);
   updateUI(tripResult);
 
-  // save trip in session storage
-  //sessionStorage.newTrip = JSON.stringify(trip);
-
-  // function to handle save
-  // const save = (event) => {
-  //      added "stopImmediatePropagation" to stop multiple listeners being called
-  //     event.stopImmediatePropagation();
-  //     saveTrip(trip);
-  //     document.getElementById('new-trip').classList.add('hide');
-  // };
-  // document.getElementsByClassName('save')[0].addEventListener('click', save);
 }
 
 async function postData(details) {

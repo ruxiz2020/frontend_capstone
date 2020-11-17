@@ -10,22 +10,6 @@ import './styles/style.scss'
 import './views/img/travel-logo.png'
 import './views/img/travel.jpg'
 
-// import JS
-//import {handleSubmit} from './js/handleSubmit.js';
-//import { saveTrip, displayTrips } from './js/displayTrips';
-
-
-
-// Main
-//document.addEventListener('DOMContentLoaded', () => {
-//  console.log('DOM fully loaded and parsed');
-  // display all trips from localStorage
-  //displayTrips();
-  // add eventListeners
-//  document.getElementById("travel_details_submit").addEventListener("click", handleSubmit);
-  //document.getElementById('submit').onclick = handleSubmit;
-  //document.getElementsByClassName('save').onclick = saveTrip;
-//});
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
