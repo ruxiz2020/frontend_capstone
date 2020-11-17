@@ -11,14 +11,14 @@ import './views/img/travel-logo.png'
 import './views/img/travel.jpg'
 
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js").then(registration => {
-      console.log("SW registered: ", registration);
-    }).catch(registrationError => {
-      console.log("SW registration failed: ", registrationError);
-    });
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    console.log('service worker registration succeeded:', registration);
+  }, function(error) {
+    console.log('service worker registration failed:', error);
   });
+} else {
+  console.log('service workers are not supported.');
 }
 
 export {
